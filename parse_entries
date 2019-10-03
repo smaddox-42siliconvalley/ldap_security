@@ -6,3 +6,4 @@ do
 	echo "" >> decoded_hashes.txt;
 done
 
+##		Information gathered with LDAP Injection: ldapsearch "*" >> ldap_dump_file.txt			##
