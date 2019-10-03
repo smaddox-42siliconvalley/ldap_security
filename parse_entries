@@ -1,0 +1,8 @@
+#!/bin/bash
+exec {temp}<> <(cat "$1" | grep "userPassword" | awk '{print $2}' | sort -u) 
+while IFS= read -t 2 -u $temp line;
+do
+	echo $line | base64 --decode >> decoded_hashes.txt;
+	echo "" >> decoded_hashes.txt;
+done
+
